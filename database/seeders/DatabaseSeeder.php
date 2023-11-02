@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
         $Enlaces = new EnlacesSeeder();
         $Enlaces->run();
 
+        $Bitacoras = new BitacoraSeeder();
+        $Bitacoras->run();        
 
     }
 }
