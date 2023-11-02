@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Bitacora;
-use App\Models\Usuarios;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BitacoraFactory extends Factory
@@ -13,13 +12,13 @@ class BitacoraFactory extends Factory
     public function definition()
     {
         return [
-            'bitacora' => $this->faker->text,
+            'bitacora' => $this->faker->sentence,
             'fecha' => $this->faker->date,
             'hora' => $this->faker->time,
             'ip' => $this->faker->ipv4,
-            'so' => $this->faker->word,
-            'navegador' => $this->faker->word,
-            'id_usuario' => Usuarios::factory(),
+            'SO' => $this->faker->userAgent,
+            'navegador' => $this->faker->userAgent,
+            'id_usuario' => $this->faker->numberBetween(1, 10), // Ajusta el rango según tus necesidades.
         ];
     }
 }
