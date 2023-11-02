@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
 
         $Usuario = new UsuariosSeeder();
         $Usuario->run();
+
+        $Bitacora = new BitacoraSeeder();
+        $Bitacora->run();
     }
 }
