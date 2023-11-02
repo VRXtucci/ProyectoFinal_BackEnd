@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         $Personas = new PersonasSeeder();
         $Personas->run();
 
-        $Usuario = new UsuariosSeeder();
-        $Usuario->run();
+        $Paginas = new PaginasSeeder();
+        $Paginas->run();
 
         $Bitacora = new BitacoraSeeder();
         $Bitacora->run();

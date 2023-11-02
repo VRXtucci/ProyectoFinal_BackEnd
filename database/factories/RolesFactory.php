@@ -12,9 +12,12 @@ class RolesFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->name(), // Genera una palabra aleatoria como nombre de rol.
-            'fecha_creacion' => now(),   // Utiliza la fecha y hora actual como fecha de creación.
-            'fecha_modificacion' => now(), // Utiliza la fecha y hora actual como fecha de modificación.
+            'roles' => $this->faker->word, // Genera una palabra aleatoria como nombre de rol.
+            'fecha_creacion' => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'), // Genera una fecha aleatoria en el último año.
+            'fecha_modificacion' => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'), // Genera una fecha aleatoria en el último año.
+            'usuario_creacion' => $this->faker->name, // Genera un nombre de usuario aleatorio como usuario de creación.
+            'usuario_modificacion' => $this->faker->name, // Genera un nombre de usuario aleatorio como usuario de modificación.
         ];
     }
+    
 }

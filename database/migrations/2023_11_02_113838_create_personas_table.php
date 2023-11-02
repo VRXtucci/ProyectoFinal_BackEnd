@@ -14,12 +14,8 @@ class CreatePersonasTable extends Migration
             $table->string('segundo_nombre')->nullable();
             $table->string('primer_apellido');
             $table->string('segundo_apellido')->nullable();
-            $table->unsignedBigInteger('rol_id'); // Campo para la llave foránea.
-            $table->foreign('rol_id')
-                ->references('id')
-                ->on('roles')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->timestamp('fecha_creacion')->useCurrent();
+            $table->timestamp('fecha_modificacion')->useCurrent();
             $table->timestamps(0);
         });
     }
