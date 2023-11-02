@@ -14,5 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $Roles = new RolesSeeder();
         $Roles->run();
+
+        $Personas = new PersonasSeeder();
+        $Personas->run();
     }
 }
