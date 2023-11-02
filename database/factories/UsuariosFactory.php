@@ -2,8 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Personas;
-use App\Models\Roles;
 use App\Models\Usuarios;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -14,14 +12,13 @@ class UsuariosFactory extends Factory
     public function definition()
     {
         return [
-            'usuario' => $this->faker->userName,
-            'contrasena' => bcrypt($this->faker->password), // Encripta la contraseña
-            'habilitado' => $this->faker->boolean,
-            'fecha' => $this->faker->dateTimeThisYear, // Fecha aleatoria de este año
-            'usuario_creacion' => $this->faker->dateTimeThisYear, // Fecha aleatoria de este año
-            'usuario_modificacion' => $this->faker->dateTimeThisYear, // Fecha aleatoria de este año
-            'id_persona' => Personas::factory(),
-            'id_rol' => Roles::factory(),
+            'contrasena' => bcrypt('password'), // Puedes definir una contraseña de ejemplo, asegúrate de cifrarla con bcrypt.
+            'habilitado' => $this->faker->boolean(),
+            'fecha' => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
+            'usuario_creacion' => $this->faker->userName,
+            'usuario_modificacion' => $this->faker->userName,
+            'id_persona' => $this->faker->numberBetween(1, 10), // Ajusta el rango según tu necesidad.
+            'id_rol' => $this->faker->numberBetween(1, 5), // Ajusta el rango según tu necesidad.
         ];
     }
 }

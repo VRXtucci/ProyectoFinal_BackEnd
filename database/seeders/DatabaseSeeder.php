@@ -21,7 +21,12 @@ class DatabaseSeeder extends Seeder
         $Paginas = new PaginasSeeder();
         $Paginas->run();
 
-        $Bitacora = new BitacoraSeeder();
-        $Bitacora->run();
+        $Usuarios = new UsuariosSeeder();
+        $Usuarios->run();
+
+        $Enlaces = new EnlacesSeeder();
+        $Enlaces->run();
+
+
     }
 }
