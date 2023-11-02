@@ -11,10 +11,6 @@ class CreateEnlacesTable extends Migration
         Schema::create('enlaces', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion');
-            $table->timestamp('fecha_creacion')->useCurrent();
-            $table->timestamp('fecha_modificacion')->useCurrent();
-            $table->string('usuario_creacion');
-            $table->string('usuario_modificacion');
             $table->unsignedBigInteger('id_pagina');
             $table->unsignedBigInteger('id_rol');
 
@@ -22,14 +18,13 @@ class CreateEnlacesTable extends Migration
                 ->references('id')
                 ->on('paginas')
                 ->onDelete('cascade')
-                ->onUpdate('cascade'); // Configuración para eliminar en cascada
+                ->onUpdate('cascade'); 
 
             $table->foreign('id_rol')
                 ->references('id')
                 ->on('roles')
                 ->onDelete('cascade')
-                ->onUpdate('cascade'); // Configuración para eliminar en cascada
-
+                ->onUpdate('cascade'); 
             $table->timestamps(0);
         });
     }

@@ -15,8 +15,6 @@ class UsuariosFactory extends Factory
             'contrasena' => bcrypt('password'), // Puedes definir una contraseña de ejemplo, asegúrate de cifrarla con bcrypt.
             'habilitado' => $this->faker->boolean(),
             'fecha' => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
-            'usuario_creacion' => $this->faker->userName,
-            'usuario_modificacion' => $this->faker->userName,
             'id_persona' => $this->faker->numberBetween(1, 10), // Ajusta el rango según tu necesidad.
             'id_rol' => $this->faker->numberBetween(1, 5), // Ajusta el rango según tu necesidad.
         ];

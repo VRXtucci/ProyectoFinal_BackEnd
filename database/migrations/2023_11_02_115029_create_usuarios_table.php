@@ -13,15 +13,20 @@ class CreateUsuariosTable extends Migration
             $table->string('contrasena');
             $table->boolean('habilitado')->default(true);
             $table->timestamp('fecha')->nullable();
-            $table->timestamp('fecha_creacion')->useCurrent();
-            $table->timestamp('fecha_modificacion')->useCurrent();
-            $table->string('usuario_creacion');
-            $table->string('usuario_modificacion');
             $table->unsignedBigInteger('id_persona');
             $table->unsignedBigInteger('id_rol');
 
-            $table->foreign('id_persona')->references('id')->on('personas');
-            $table->foreign('id_rol')->references('id')->on('roles');
+            $table->foreign('id_persona')
+                ->references('id')
+                ->on('personas')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+                
+            $table->foreign('id_rol')
+                ->references('id')
+                ->on('roles')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps(0);
         });
     }

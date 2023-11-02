@@ -13,10 +13,6 @@ class EnlacesFactory extends Factory
     {
         return [
             'descripcion' => $this->faker->sentence,
-            'fecha_creacion' => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
-            'fecha_modificacion' => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
-            'usuario_creacion' => $this->faker->userName,
-            'usuario_modificacion' => $this->faker->userName,
             'id_pagina' => $this->faker->numberBetween(1, 10), // Ajusta el rango según tus necesidades.
             'id_rol' => $this->faker->numberBetween(1, 5), // Ajusta el rango según tus necesidades.
         ];

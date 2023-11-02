@@ -12,10 +12,6 @@ class CreatePaginasTable extends Migration
             $table->id();
             $table->string('url');
             $table->string('estado');
-            $table->timestamp('fecha_creacion')->nullable();
-            $table->timestamp('fecha_modificacion')->nullable();
-            $table->string('usuario_creacion');
-            $table->string('usuario_modificacion');
             $table->timestamps(0);
         });
     }
