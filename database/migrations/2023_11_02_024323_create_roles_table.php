@@ -10,10 +10,10 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->unique(); // Añade restricción unique
-            $table->bigInteger('fecha_creacion')->unique(); // Añade restricción unique
-            $table->bigInteger('fecha_modificacion')->unique(); // Añade restricción unique
-            $table->timestamps();
+            $table->string('nombre')->unique();
+            $table->timestamp('fecha_creacion')->default(now());
+            $table->timestamp('fecha_modificacion')->default(now());
+            $table->timestamps(); // Esto agrega las columnas created_at y updated_at como timestamps
         });
     }
 
