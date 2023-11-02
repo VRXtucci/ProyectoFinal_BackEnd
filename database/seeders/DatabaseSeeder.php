@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
 
         $Personas = new PersonasSeeder();
         $Personas->run();
+
+        $Usuario = new UsuariosSeeder();
+        $Usuario->run();
     }
 }
